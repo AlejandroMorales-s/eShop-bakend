@@ -18,6 +18,13 @@ app.get('/products', async (req, res) => {
     res.json(allProducts);
 });
 
+//* Endpoint para listar un producto por id
+app.get('/products/:id', async (req, res) => {
+    const id = req.params.id;
+    const product = await prisma.Products.findUnique({where: {id: parseInt(id)}});
+    res.json(product);
+});
+
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
 });
