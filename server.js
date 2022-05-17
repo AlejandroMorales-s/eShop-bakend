@@ -1,3 +1,4 @@
+const ProductsController = require('./lib/controller/productsController');
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -23,6 +24,13 @@ app.get('/products/:id', async (req, res) => {
     const id = req.params.id;
     const product = await prisma.Products.findUnique({where: {id: parseInt(id)}});
     res.json(product);
+});
+
+//* Endpoint para buscar productos por nombre
+app.get('/products/search/:name', async (req, res) => {
+    const name = req.params.name;
+    const products = await ProductsController.getProductsByName(name);
+    res.json(products);
 });
 
 app.listen(port, () => {
