@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node ./node_modules/jest/bin/jest.js",
     "dev": "nodemon server.js",
-    "server": "node server.js"
+    "server": "node server.js",
+    "data": "node prisma/seed.js"
   },
   "keywords": [],
   "author": "",
