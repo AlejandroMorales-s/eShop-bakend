@@ -163,6 +163,54 @@ const prisma = new PrismaClient();
                 discount: 7
             },
     });
+    const hero1 = await prisma.HeroImgs.upsert({
+      where: { name: 'Hero 1' },
+      update: {},
+      create: {
+        name: 'Hero 1',
+                images: 'https://http2.mlstatic.com/D_NQ_624434-MLA49984575915_052022-OO.webp',
+            },
+    });
+    const hero2 = await prisma.HeroImgs.upsert({
+      where: { name: 'Hero 2' },
+      update: {},
+      create: {
+        name: 'Hero 2',
+                images: 'https://http2.mlstatic.com/D_NQ_980620-MLA49973149181_052022-OO.webp',
+            },
+    });
+    const hero3 = await prisma.HeroImgs.upsert({
+      where: { name: 'Hero 3' },
+      update: {},
+      create: {
+        name: 'Hero 3',
+                images: 'https://http2.mlstatic.com/D_NQ_865061-MLA49973906953_052022-OO.webp',
+            },
+    });
+    const hero4 = await prisma.HeroImgs.upsert({
+      where: { name: 'Hero 4' },
+      update: {},
+      create: {
+        name: 'Hero 4',
+                images: 'https://http2.mlstatic.com/D_NQ_710710-MLA49636436790_042022-OO.webp',
+            },
+    });
+    const hero5 = await prisma.HeroImgs.upsert({
+      where: { name: 'Hero 5' },
+      update: {},
+      create: {
+        name: 'Hero 5',
+                images: 'https://http2.mlstatic.com/D_NQ_631396-MLA49973527365_052022-OO.webp',
+            },
+    });
+    const hero6 = await prisma.HeroImgs.upsert({
+      where: { name: 'Hero 6' },
+      update: {},
+      create: {
+        name: 'Hero 6',
+                images: 'https://http2.mlstatic.com/D_NQ_865258-MLA49075260514_022022-OO.webp',
+            },
+    });
 
 
     console.log('New products added');
