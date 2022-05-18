@@ -9,6 +9,15 @@ const { PrismaClient } = require('@prisma/client');
 const { application } = require('express');
 const prisma = new PrismaClient();
 
+//* Cors
+const cors = require('cors');
+
+const corsOptions = {
+    origin: '*',
+};
+
+app.use(cors(corsOptions));
+
 app.get('/', (req, res) => {
   res.json({message: 'eShop API'});
 });
