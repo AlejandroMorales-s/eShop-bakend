@@ -33,6 +33,12 @@ app.get('/products/search/:name', async (req, res) => {
     res.json(products);
 });
 
+//* Endpoint para obtener hero images
+app.get('/heroimgs', async (req, res) => {
+    const heroImages = await prisma.HeroImgs.findMany({});
+    res.json(heroImages);
+});
+
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
 });
