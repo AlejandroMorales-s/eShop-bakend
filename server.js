@@ -42,6 +42,13 @@ app.get('/products/search/:name', async (req, res) => {
     res.json(products);
 });
 
+//* Endpoint para filtrar por categoria
+app.get('/products/category/:category', async (req, res) => {
+    const category = req.params.category;
+    const products = await ProductsController.getProductsByCategory(category);
+    res.json(products);
+});
+
 //* Endpoint para obtener hero images
 app.get('/heroimgs', async (req, res) => {
     const heroImages = await prisma.HeroImgs.findMany({});
