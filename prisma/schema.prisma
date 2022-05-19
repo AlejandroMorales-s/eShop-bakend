@@ -12,7 +12,7 @@ datasource db {
 
 model Products {
   id Int @id @default(autoincrement())
-  name String @unique
+  name String 
   brand String
   category String @db.VarChar(155)
   price Int
