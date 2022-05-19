@@ -8,4 +8,9 @@ describe("Unit test for ProductsService class", () => {
         const productsByName = ProductsService.filterByName(products, "iPhone");
         expect(productsByName[0].name).toBe("iPhone 13");
     });
+
+    test("Filter products by category", () => {
+        const productsByCategory = ProductsService.filterByCategory(products, "sports");
+        expect(productsByCategory.length).toBe(8);
+    });
 });
